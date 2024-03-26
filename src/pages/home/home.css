@@ -1,0 +1,20 @@
+
+.react-multiple-carousel__arrow::before{
+    color: black !important;
+}
+
+.react-multiple-carousel__arrow--left{
+    left: -3px !important;
+}
+
+.react-multiple-carousel__arrow--right{
+    right: -3px !important;
+}
+
+
+.react-multiple-carousel__arrow{
+     background-color: #fff !important;
+     color: black;
+     padding: 5px !important;
+    
+}
