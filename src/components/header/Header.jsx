@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiMenu } from "react-icons/fi";
-import { IoCloseOutline } from "react-icons/io5";
+
+import { RxCross2 } from "react-icons/rx";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 
@@ -48,7 +49,7 @@ export default function Navbar() {
           <section className="flex items-center gap-4">
 
             <FiMenu
-              onClick={handleMenuToggle} // Call the function to toggle the menu
+              onClick={handleMenuToggle}
               className="text-3xl cursor-pointer lg:hidden"
             />
             {/* logo */}
@@ -68,21 +69,40 @@ export default function Navbar() {
             isSideMenuOpen && "translate-x-0"
           )}
         >
-          <div className="h-full px-3 py-4 overflow-y-auto bg-gray-100 ">
+          <div className="h-full py-4 overflow-y-auto bg-black text-white ">
+            <div className="flex justify-end ">
+              <span><RxCross2 onClick={handleMenuToggle} className="text-NewYello w-6 h-6" /></span>
+            </div>
+
             <a href="#" className="flex items-center ps-2.5 mb-5">
               {/* <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" /> */}
               <span className="self-center text-xl font-semibold whitespace-nowrap "></span>
             </a>
-            <ul className="space-y-2 font-medium">
+            <ul className=" font-medium">
               <li>
-                <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-NewYello  group">
+                <a href="#" className="flex border-b items-center py-3   hover:bg-gray-100 dark:hover:bg-NewYello  group">
                   <span className="ms-3">Dashboard</span>
                 </a>
               </li>
               <li>
-                <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:hover:bg-NewYello group">
-                  <span className="flex-1 ms-3 whitespace-nowrap">Kanban</span>
-                </a>
+                <Link to="/" className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group">
+                  <span className="flex-1 ms-3 whitespace-nowrap">Home</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group">
+                  <span className="flex-1 ms-3 whitespace-nowrap">Contact Us</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/about-us" className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group">
+                  <span className="flex-1 ms-3 whitespace-nowrap">About Us</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="flex items-center border-b  py-3   hover:bg-gray-100 dark:hover:bg-NewYello group">
+                  <span className="flex-1 ms-3 whitespace-nowrap">Blog</span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -93,11 +113,11 @@ export default function Navbar() {
 
         <section>
           <ul className="text-lg font-normal uppercase hidden lg:flex leading-[100px]">
-            <li className="px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
               <Link to="/" className="">Home</Link>
             </li>
 
-            <li className="px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setPropertiesOpen(true)} onMouseLeave={() => setPropertiesOpen(false)}>
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setPropertiesOpen(true)} onMouseLeave={() => setPropertiesOpen(false)}>
               <div className="relative inline-block text-left">
                 <button
                   className="inline-flex justify-center w-full"
@@ -123,7 +143,7 @@ export default function Navbar() {
               </div>
             </li>
 
-            <li className="px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setBuyingOpen(true)} onMouseLeave={() => setBuyingOpen(false)}>
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setBuyingOpen(true)} onMouseLeave={() => setBuyingOpen(false)}>
               <div className="relative inline-block text-left">
                 <button
                   className="inline-flex justify-center w-full"
@@ -140,16 +160,15 @@ export default function Navbar() {
                 {buyingOpen && (
                   <div className="absolute right-0 z-10 w-56  origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 -md shadow-lg outline-none" role="menu">
                     <div className="py-1">
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Option 1</a>
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Option 2</a>
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Option 3</a>
+                      <Link to="/buyer-guide" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Buyer Guide</Link>
+                      <Link to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Option</Link>
                     </div>
                   </div>
                 )}
               </div>
             </li>
 
-            <li className="px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setSellingOpen(true)} onMouseLeave={() => setSellingOpen(false)}>
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setSellingOpen(true)} onMouseLeave={() => setSellingOpen(false)}>
               <div className="relative inline-block text-left">
                 <button
                   className="inline-flex justify-center w-full"
@@ -166,7 +185,7 @@ export default function Navbar() {
                 {sellingOpen && (
                   <div className="absolute right-0 z-10 w-56  origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 -md shadow-lg outline-none" role="menu">
                     <div className="py-1">
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Option 1</a>
+                      <Link to="/seller-guide" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Seller Guide</Link>
                       <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Option 2</a>
                       <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Option 3</a>
                     </div>
@@ -175,12 +194,12 @@ export default function Navbar() {
               </div>
             </li>
 
-            <li className="px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
               <Link to="/blog" className="">blog</Link>
             </li>
             {/* Add similar logic for other dropdowns */}
 
-            <li className="px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
+            <li className="  px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
               <div className="relative inline-block text-left">
                 <button
                   className="inline-flex justify-center w-full"
@@ -197,15 +216,15 @@ export default function Navbar() {
                 {aboutOpen && (
                   <div className="absolute right-0 z-10 w-56 mt-0 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 -md shadow-lg outline-none" role="menu">
                     <div className="py-1">
-                      <Link to="/about-us" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">About</Link>
-                      <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Contact</Link>
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Option 3</a>
+                      <Link to="/about-us" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">About Us</Link>
+                      <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Contact Us</Link>
+                      <Link to="/testimonial" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Testimonial</Link>
                     </div>
                   </div>
                 )}
               </div>
             </li>
-            <li className="px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
               <Link to="/login" className="">Sign In</Link>
             </li>
           </ul>

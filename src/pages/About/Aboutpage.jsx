@@ -4,8 +4,9 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { MdKeyboardArrowDown } from "react-icons/md";
+
 import ContentToggle from '../../components/ContentToggle';
+import Footer from '../../components/footer/Footer';
 const Aboutpage = () => {
 
 
@@ -154,7 +155,7 @@ const Aboutpage = () => {
 
                 <div className='container mx-auto px-4 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-10 '>
 
-                    <ContentToggle/>
+                    <ContentToggle />
 
                 </div>
 
@@ -164,7 +165,7 @@ const Aboutpage = () => {
 
 
 
-
+            <Footer />
 
 
 

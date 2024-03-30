@@ -28,69 +28,149 @@ const Home = () => {
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base">In the vibrant neighborhood of San Jose, California, Sam is renowned among residents, property developers, local businesses, and professionals in the real estate industry for her remarkable skills, dynamic approach, and tireless commitment to facilitating transactions for buyers and sellers.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-5 mb-4">
-                    <div class="col-span-2 py-28  lg:py-40 bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/10-4.webp")` }}>
-                        <div class="   bg-black bg-opacity-25 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
-                            <p class="text-white text-2xl font-normal font-prata  tracking-tight ">MISSION</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 ">
+                    <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://iss-cdn.myrealpage.com/E5lThairrDECelTxJ4AEpZ8NH6l-LfS3oTlTj_ABTG0/rs:auto:0:0:0/g:sm/bG9jYWw6Ly8vZGF0YS9hcHAvd3BzL19jb21tb24vYmxvY2tzL3NlYXJjaC1ib3gtMTAyL2NvdWNoLWxhbmRpbmcuanBnP3Q9MTYxNzA1NDA4OTE3MA?t=1617054089170")` }}>
+                        <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
+                            <div className='flex flex-col'>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">MISSION</p>
+                                <div className='text-white content flex gap-2 mt-3'>
+
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Condos</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Tounhouses</button>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-span-1 py-28  lg:py-40 bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/2-1.webp")` }}>
-                        <div class="   bg-black bg-opacity-25 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
-                            <p class="text-white text-2xl font-normal font-prata  tracking-tight ">ABBOTSFORD
+                    <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat  shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://s3-us-west-2.amazonaws.com/avenuehq-listings/fvrebgv/000/262/883/0c8f25cb144d1f1445446c0391bf2caf97a1b653.jpg?fit=clip&w=1140")` }}>
+                        <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
+                            <div className='flex flex-col'>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">ABBOTSFORD</p>
+                                <div className='text-white content flex gap-2 mt-3'>
 
-                            </p>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Condos</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Tounhouses</button>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-span-1 py-28  lg:py-40 bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/1.6-1-980x768.webp")` }}>
-                        <div class="   bg-black bg-opacity-25 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
-                            <p class="text-white text-2xl font-normal font-prata  tracking-tight ">CHILLIWACK
 
-                            </p>
+                    <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat  shadow overflow-hidden relative flex items-center justify-center"
+                        style={{ backgroundImage: `url("https://iss-cdn.myrealpage.com/fT9pBdxiTbRnMkOq-sVZVpD36H31p7jJ_GEIe45q67Y/rs:auto:0:0:0/g:sm/bG9jYWw6Ly8vZGF0YS9hcHAvd3BzL19jb21tb24vYmxvY2tzL3NlYXJjaC1ib3gtMTAyL2xpdmluZy1yb29tLmpwZz90PTE2MTcwNTQwODkwNzA?t=1617054089070")` }}>
+                        <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
+                            <div className='flex flex-col'>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">CHILLIWACK</p>
+                                <div className='text-white content flex gap-2 mt-3'>
+
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Condos</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Tounhouses</button>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-span-1 py-28  lg:py-40 bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/10-4.webp")` }}>
-                        <div class="   bg-black bg-opacity-25 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
-                            <p class="text-white text-2xl font-normal font-prata  tracking-tight ">MAPLE RIDGE
 
-                            </p>
+                    <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat  shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://iss-cdn.myrealpage.com/0QrmAdPZSMS9I_DXcQoFN9EeqsXKmztcQQDzuEUEcN4/rs:auto:0:0:0/g:sm/bG9jYWw6Ly8vZGF0YS9hcHAvd3BzL19jb21tb24vYmxvY2tzL3NlYXJjaC1ib3gtMTAyL3doaXRlLWtpdGNoZW4tZ2FsbGV5LmpwZz90PTE2MTcwNTQwODkxNTM?t=1617054089153")` }}>
+                        <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
+                            <div className='flex flex-col'>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">MAPLE RIDGE</p>
+                                <div className='text-white content flex gap-2 mt-3'>
+
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Condos</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Tounhouses</button>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
-                <div class=" grid grid-cols-1 md:grid-cols-5 gap-5 ">
-                    <div class="col-span-1 py-28  lg:py-40 bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2023/11/12-980x682.webp")` }}>
-                        <div class="   bg-black bg-opacity-25 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
-                            <p class="text-white text-2xl font-normal font-prata  tracking-tight">ALDERGROVE
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://iss-cdn.myrealpage.com/Q1OJFGk0m94pSyRSSzlMM5TIPUn46tKXkgZ3MPDa2N4/rs:auto:0:0:0/g:sm/bG9jYWw6Ly8vZGF0YS9hcHAvd3BzL19jb21tb24vYmxvY2tzL3NlYXJjaC1ib3gtMTAyL2JlbmNoLXdpbmRvdy5qcGc_dD0xNjE3MDU0MDg5MDY0?t=1617054089064")` }}>
+                        <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
+                            <div className='flex flex-col'>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">HOPE
 
-                            </p>
+
+                                </p>
+                                <div className='text-white content flex gap-2 mt-3'>
+
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Condos</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Tounhouses</button>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-span-1 py-28  lg:py-40 bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2023/11/4.webp")` }}>
-                        <div class="   bg-black bg-opacity-25 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
-                            <p class="text-white text-2xl font-normal font-prata  tracking-tight ">LANGLEY
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-1 py-28  lg:py-40 bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2023/11/1-980x768.webp")` }}>
-                        <div class="   bg-black bg-opacity-25 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
-                            <p class="text-white text-2xl font-normal font-prata  tracking-tight ">HARRISON
+                    <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat  shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://s3-us-west-2.amazonaws.com/avenuehq-listings/fvrebgv/000/262/883/0c8f25cb144d1f1445446c0391bf2caf97a1b653.jpg?fit=clip&w=1140")` }}>
+                        <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
+                            <div className='flex flex-col'>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">HARRISON</p>
+                                <div className='text-white content flex gap-2 mt-3'>
 
-                            </p>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Condos</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Tounhouses</button>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-span-2 py-28  lg:py-40 bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2021/10/5.0.2-980x501.webp")` }}>
-                        <div class="   bg-black bg-opacity-25 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
-                            <p class="text-white text-2xl font-normal font-prata  tracking-tight ">SILVERDALE</p>
+
+
+
+                    <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat  shadow overflow-hidden relative flex items-center justify-center"
+                        style={{ backgroundImage: `url("https://iss-cdn.myrealpage.com/fT9pBdxiTbRnMkOq-sVZVpD36H31p7jJ_GEIe45q67Y/rs:auto:0:0:0/g:sm/bG9jYWw6Ly8vZGF0YS9hcHAvd3BzL19jb21tb24vYmxvY2tzL3NlYXJjaC1ib3gtMTAyL2xpdmluZy1yb29tLmpwZz90PTE2MTcwNTQwODkwNzA?t=1617054089070")` }}>
+                        <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
+                            <div className='flex flex-col'>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">SILVERDALE
+</p>
+                                <div className='text-white content flex gap-2 mt-3'>
+
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Condos</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Tounhouses</button>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
+                    <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat  shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://iss-cdn.myrealpage.com/0QrmAdPZSMS9I_DXcQoFN9EeqsXKmztcQQDzuEUEcN4/rs:auto:0:0:0/g:sm/bG9jYWw6Ly8vZGF0YS9hcHAvd3BzL19jb21tb24vYmxvY2tzL3NlYXJjaC1ib3gtMTAyL3doaXRlLWtpdGNoZW4tZ2FsbGV5LmpwZz90PTE2MTcwNTQwODkxNTM?t=1617054089153")` }}>
+                        <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
+                            <div className='flex flex-col'>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">LANGLEY
+
+
+
+</p>
+                                <div className='text-white content flex gap-2 mt-3'>
+
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Condos</button>
+                                    <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>Tounhouses</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                 </div>
 
             </section>
-
-
-
 
 
             <div className='mt-3 lg:mt-16'>
@@ -112,7 +192,7 @@ const Home = () => {
 
 
 
-           
+
         </>
     )
 }

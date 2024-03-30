@@ -18,3 +18,15 @@
      padding: 5px !important;
     
 }
+
+
+.parent-div .content {
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Add opacity transition */
+    opacity: 0; /* Initially hidden */
+}
+
+.parent-div:hover .content {
+    transform: translateY(0);
+    opacity: 1; /* Show on hover */
+}

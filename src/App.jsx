@@ -10,6 +10,10 @@ import Singleblogpage from './pages/blog/Singleblogpage';
 import About from './pages/home/About';
 import Aboutpage from './pages/About/Aboutpage';
 import Contactpage from './pages/Contact/Contactpage';
+import Testimonialpage from './pages/About/Testimonialpage';
+import FeaturesDetails from './pages/Featured/FeaturesDetails';
+import BuyersGuide from './pages/sell/BuyersGuide';
+import SellerGuide from './pages/sell/SellerGuide';
 
 function App() {
 
@@ -18,11 +22,17 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/feature' element={<FeaturedPage />} />
+        <Route path='/featurelist' element={<FeaturesDetails />} />
         <Route path='/login' element={<Login />} />
         <Route path='/blog' element={<Blogcontainer />} />
         <Route path='/singleblog' element={<Singleblogpage />} />
-        <Route path='/contact' element={<Contactpage/>}/>
-        <Route path="/about-us" element={<Aboutpage/>} />
+        <Route path='/contact' element={<Contactpage />} />
+        <Route path="/about-us" element={<Aboutpage />} />
+        <Route path="/testimonial" element={<Testimonialpage />} />
+        
+        <Route path='/buyer-guide' element= {<BuyersGuide/>}/>
+        <Route path='/seller-guide' element= {<SellerGuide/>}/>
+
       </Routes>
 
     </>

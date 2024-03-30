@@ -5,6 +5,33 @@ import { LuTriangleRight } from "react-icons/lu";
 const CardList = () => {
 
     const data = [1, 2, 4, 5, 6, 7]
+    
+    const data2 = [
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2021/09/decor_nice-1-8.jpg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/couch.jpg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/category_9.jpeg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/interior27-835x467.jpg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/city_9.jpeg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/category_11.jpeg"
+        }
+    ]
+
+
+
+
+
+
     return (
         <div className='py-5 lg:py-20 bg-[#abb8c3]/10 '>
             <div className='container px-4 lg:px-10 mx-auto items-center '>
@@ -15,7 +42,7 @@ const CardList = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-10 mx-auto'>
 
                     {
-                        data.map((item) => {
+                        data2.map((item) => {
                             return (
                                 <>
                                     <div
@@ -24,7 +51,8 @@ const CardList = () => {
                                         <a href="#">
                                             <img
                                                 className='w-full'
-                                                src="https://demo06.houzez.co/wp-content/uploads/2016/03/015-592x444.jpg" alt="" />
+                                                src={item.imgUrl}
+                                                 alt="" />
 
                                         </a>
                                         <div class="p-6">

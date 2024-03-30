@@ -9,6 +9,7 @@ import { FaFacebookF } from "react-icons/fa";
 
 import BlogCard from "../../components/BlogCard"
 import SearchForm from '../../components/SearchForm';
+import Footer from '../../components/footer/Footer';
 const Contactpage = () => {
     const data = [1, 2, 4]
     return (
@@ -143,6 +144,8 @@ const Contactpage = () => {
 
                 </div>
             </div >
+
+            <Footer/>
 
         </>
     )

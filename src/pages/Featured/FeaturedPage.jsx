@@ -2,9 +2,33 @@ import React from 'react'
 import Header from "../../components/header/Header"
 import { MdAddCall } from "react-icons/md";
 import Footer from '../../components/footer/Footer';
+import { Link } from 'react-router-dom';
 const FeaturedPage = () => {
 
-    const data = [1, 2, 4, 5, 6, 7]
+ 
+
+    const data2 = [
+        {
+            imgUrl: "https://s3-us-west-2.amazonaws.com/avenuehq-listings/fvrebgv/000/262/828/579e07eb2cf83a63f4382dedd25db8b6b61c67fa.jpg?fit=clip&w=1140"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/couch.jpg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/category_9.jpeg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/interior27-835x467.jpg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/city_9.jpeg"
+        },
+        {
+            imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2022/01/category_11.jpeg"
+        }
+    ]
+
+
     return (
         <>
             <Header />
@@ -66,7 +90,7 @@ const FeaturedPage = () => {
                 <div className='py-8 flex flex-wrap gap-5'>
 
                     {
-                        data.map((item) => {
+                        data2.map((item) => {
                             return (
                                 <>
                                     <div class="max-w-sm mb-4">
@@ -75,7 +99,7 @@ const FeaturedPage = () => {
                                         <div className=' border p-2 relative h-[185px] overflow-hidden'>
                                             <img
                                                 className='transform transition-transform duration-3000 hover:scale-125'
-                                                src="/asset/card-img.jpg"
+                                                src={item.imgUrl}
                                                 alt=""
                                             />
                                             <div className='p-2 absolute top-2 right-2 bg-black/70 rounded-md'>
@@ -131,8 +155,8 @@ const FeaturedPage = () => {
                                         <p className='text-xs py-2 pl-1'>Listed by 3033 IMMEL ST #360 ABBOTSFORD</p>
 
                                         <div className='flex justify-between'>
-                                            <button className='text-white  shadow-xl text-sm transition duration-150 ease-out hover:ease-in  bg-[#C5B351] hover:bg-black uppercase px-8 py-2'>more</button>
-                                            <button className='text-white  shadow-xl  text-sm transition duration-150 ease-out hover:ease-in  bg-black  hover:bg-[#C5B351] uppercase px-8 py-2'>more</button>
+                                            <Link to="/featurelist" className='text-white  shadow-xl text-sm transition duration-150 ease-out hover:ease-in  bg-[#C5B351] hover:bg-black uppercase px-8 py-2'>View</Link>
+                                            <Link to="/featurelist" className='text-white  shadow-xl  text-sm transition duration-150 ease-out hover:ease-in  bg-black  hover:bg-[#C5B351] uppercase px-8 py-2'>more</Link>
 
                                         </div>
 

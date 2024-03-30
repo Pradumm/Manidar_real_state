@@ -3,6 +3,7 @@ import Header from "../../components/header/Header"
 import { TbMathGreater } from "react-icons/tb";
 import Footer from '../../components/footer/Footer';
 import SearchForm from '../../components/SearchForm';
+import { Link } from 'react-router-dom';
 const Blogcontainer = () => {
 
     const firstRef = useRef(null);
@@ -68,7 +69,7 @@ const Blogcontainer = () => {
                                             of which 22.96 square miles lo
                                             59.5 ...</p>
                                         <div className='absolute   left-4 bottom-5'>
-                                            <span className='flex cursor-pointer text-sm font-bold hover:text-NewYello  justify-center items-center mt-2' > Continue reading  <TbMathGreater className='pl-1' /></span>
+                                            <Link to="/singleblog" className='flex cursor-pointer text-sm font-bold hover:text-NewYello  justify-center items-center mt-2' > Continue reading  <TbMathGreater className='pl-1' /></Link>
                                         </div>
                                     </div>
 
@@ -90,7 +91,7 @@ const Blogcontainer = () => {
                                             of which 22.96 square miles
                                             59.5 ...</p>
                                         <div className='absolute   left-4 bottom-5'>
-                                            <span className='flex cursor-pointer text-sm font-bold hover:text-NewYello  justify-center items-center mt-2' > Continue reading  <TbMathGreater className='pl-1' /></span>
+                                            <Link to="singleblog" className='flex cursor-pointer text-sm font-bold hover:text-NewYello  justify-center items-center mt-2' > Continue reading  <TbMathGreater className='pl-1' /></Link>
                                         </div>
                                     </div>
 
