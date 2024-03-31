@@ -12,7 +12,7 @@ const About = () => {
 
                     <div className='flex flex-wrap'>
                         <div className='w-full lg:w-[40%] h-[21rem] md:h-[52rem] lg:h-auto bg-center rounded-xl  bg-no-repeat bg-cover' style={{ backgroundImage: `url("././asset/About_img_ori.jpg")` }} >
-                           
+
                         </div>
 
                         <div className='w-full lg:w-3/5 sm:py-14 md:pl-10 '>
@@ -20,9 +20,25 @@ const About = () => {
                             <h1 className='text-3xl lg:text-5xl font-[400] text-[#C5B351] capitalize  mb-5'>Maninder Singh, Your Local Realtor</h1>
 
                             <div className=''>
-                                <p className='text-base leading-relaxed mb-4'>Born and raised in Mission, BC, Rav brings local passion and intimate Fraser Valley knowledge to her role as a real estate professional. Focused on the Fraser Valley, she's dedicated to serving her community, building relationships, and providing top-notch service to her clients. </p>
+                                <p className='text-base leading-relaxed mb-4'>
+                                    A versatile professional who has made a name for
+                                    himself in two distinct fields: real estate and information
+                                    technology. As a real estate agent, Maninder has helped numerous
+                                    clients find their dream homes or invest in profitable properties. 
+                                    With his deep knowledge of the local real estate market and his ability 
+                                    to negotiate favorable deals, he has earned
+                                    a reputation for being trustworthy, reliable, and results-oriented.
+                                </p>
 
-                                <p className='text-base  leading-relaxed   mb-8'>Born and raised in Mission, BC, Rav brings local passion and intimate Fraser Valley knowledge to her role as a real estate professional. Focused on the Fraser Valley, she's dedicated to serving her community, building relationships, and providing top-notch service to her clients. </p>
+                                <p className='text-base  leading-relaxed   mb-8'>
+                                    In addition to his real estate expertise, Maninder is also a
+                                    skilled information technology professional.
+                                    He has a degree in computer science and has worked in various
+                                    roles in the tech industry for over a decade. His technical skills
+                                    and knowledge have enabled him to implement innovative solutions,
+                                    streamline processes,
+                                    and enhance the efficiency and effectiveness of the companies he has worked for.
+                                </p>
 
 
                                 {/* <div className=' flex gap-3 mt-2 '>

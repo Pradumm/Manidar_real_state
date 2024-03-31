@@ -22,16 +22,17 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/feature' element={<FeaturedPage />} />
-        <Route path='/featurelist' element={<FeaturesDetails />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/property/:id' element={<FeaturesDetails />} />
+        <Route path='/login' element={<Login />} /> 
         <Route path='/blog' element={<Blogcontainer />} />
-        <Route path='/singleblog' element={<Singleblogpage />} />
+        <Route path='/singleblog/:id' element={<Singleblogpage />} />
         <Route path='/contact' element={<Contactpage />} />
         <Route path="/about-us" element={<Aboutpage />} />
         <Route path="/testimonial" element={<Testimonialpage />} />
-        
-        <Route path='/buyer-guide' element= {<BuyersGuide/>}/>
-        <Route path='/seller-guide' element= {<SellerGuide/>}/>
+        <Route path='/buyer-guide' element={<BuyersGuide />} />
+        <Route path='/seller-guide' element={<SellerGuide />} />
+
+
 
       </Routes>
 

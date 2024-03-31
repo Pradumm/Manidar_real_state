@@ -5,7 +5,7 @@ import { LuTriangleRight } from "react-icons/lu";
 const CardList = () => {
 
     const data = [1, 2, 4, 5, 6, 7]
-    
+
     const data2 = [
         {
             imgUrl: "https://seattle.b-cdn.net/wp-content/uploads/2021/09/decor_nice-1-8.jpg"
@@ -52,7 +52,7 @@ const CardList = () => {
                                             <img
                                                 className='w-full'
                                                 src={item.imgUrl}
-                                                 alt="" />
+                                                alt="" />
 
                                         </a>
                                         <div class="p-6">

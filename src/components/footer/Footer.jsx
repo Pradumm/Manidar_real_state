@@ -13,7 +13,7 @@ const Footer = () => {
                         <div class='flex flex-wrap  gap-6'>
                             <div class='w-full lg:w-56'>
                                 <img src="https://media.istockphoto.com/id/1445195721/photo/happy-female-customer-paying-with-a-credit-card-in-a-ceramic-store.webp?b=1&s=170667a&w=0&k=20&c=OzfxMe_tc7J0hljLVCMQKbMPIcJ3JVblYow6FonNA_Q=" class='w-full' alt="" />
-                                <p className='text-xl font-semibold text-center py-2 '>Manider Singh</p>
+                                <p className='text-xl font-semibold text-center py-2 '></p>
                                 <img 
                                  
                                  src="./asset/Rexara Logo Transparent.png"

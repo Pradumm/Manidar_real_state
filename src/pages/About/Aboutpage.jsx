@@ -39,19 +39,22 @@ const Aboutpage = () => {
 
               <div className="">
                 <p className="text-base leading-relaxed mb-4">
-                  Born and raised in Mission, BC, Rav brings local passion and
-                  intimate Fraser Valley knowledge to her role as a real estate
-                  professional. Focused on the Fraser Valley, she's dedicated to
-                  serving her community, building relationships, and providing
-                  top-notch service to her clients.{" "}
+                  A versatile professional who
+                  has made a name for himself in two distinct fields:
+                  real estate and information technology. As a real estate agent,
+                  Maninder has helped numerous clients find their dream homes or
+                  invest in profitable properties. With his deep knowledge of the
+                  local real estate market and his ability to negotiate favorable deals,
+                  he has earned a reputation for being trustworthy, reliable, and results-oriented.
                 </p>
 
                 <p className="text-base  leading-relaxed   mb-8">
-                  Born and raised in Mission, BC, Rav brings local passion and
-                  intimate Fraser Valley knowledge to her role as a real estate
-                  professional. Focused on the Fraser Valley, she's dedicated to
-                  serving her community, building relationships, and providing
-                  top-notch service to her clients.{" "}
+                  Maninder's unique combination of skills and experience
+                  makes him a valuable asset to anyone looking to buy, sell,
+                  or invest in real estate, as well as companies seeking to
+                  leverage technology to achieve their business goals.
+                  With his passion for both fields, he is committed to providing his clients with
+                  exceptional service and delivering exceptional results.
                 </p>
 
                 <div className=" my-6">
@@ -113,11 +116,11 @@ const Aboutpage = () => {
             About Maninder Realty
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Liza is recognized by everyone – clients, developers, vendors, and
-            industry professionals – for her unique talents, creative drive, and
-            diligence in assisting buyers and sellers in one of the most scenic
-            and fulfilling places, Park City, Utah. With her far-reaching
-            network/
+            "Maninder Singh is a dedicated and knowledgeable real estate agent with
+            a passion for helping clients find their dream home. With years of experience
+            in the industry,
+            Maninder has established a reputation for providing exceptional
+            service and expert guidance to each and every one of his clients.
           </p>
         </div>
 

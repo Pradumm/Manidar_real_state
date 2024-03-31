@@ -133,7 +133,7 @@ const Home = () => {
                         <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
                             <div className='flex flex-col'>
                                 <p class="text-white text-2xl font-normal font-prata  tracking-tight ">SILVERDALE
-</p>
+                                </p>
                                 <div className='text-white content flex gap-2 mt-3'>
 
                                     <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
@@ -153,7 +153,7 @@ const Home = () => {
 
 
 
-</p>
+                                </p>
                                 <div className='text-white content flex gap-2 mt-3'>
 
                                     <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>

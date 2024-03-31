@@ -241,7 +241,7 @@ const FeaturesDetails = () => {
                         <div className='py-6'>
 
                             <form class=" w-full bg-white shadow-lg text-[#464646] lg:mt-8 p-8">
-                                
+
 
                                 <div className='flex gap-4 mb-4'>
                                     <div>

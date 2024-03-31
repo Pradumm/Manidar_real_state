@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from "../../components/header/Header"
 import { FaCalendarAlt } from "react-icons/fa";
 import { CiStickyNote } from "react-icons/ci";
@@ -10,8 +10,75 @@ import { FaFacebookF } from "react-icons/fa";
 import BlogCard from "../../components/BlogCard"
 import SearchForm from '../../components/SearchForm';
 import Footer from '../../components/footer/Footer';
+import { useParams } from 'react-router-dom';
 const Singleblogpage = () => {
-    const data = [1, 2, 4]
+    const data = [1, 2, 3, 4, 5]
+    const [blogs, setBlogs] = useState([]);
+    const [Singleblogs, setSingleblogs] = useState({});
+
+    const [formattedDate, setFormattedDate] = useState("");
+
+    const { id } = useParams()
+
+    const fetchBlogs = async () => {
+        try {
+            const response = await fetch('https://backend.artechworld.tech/api/blogs');
+            const data = await response.json();
+            if (data.status) {
+                const parsedBlogs = data.data
+                setBlogs(parsedBlogs);
+            } else {
+                console.error('Failed to fetch blogs');
+            }
+        } catch (error) {
+            console.error('Error fetching blogs:', error);
+        }
+    };
+
+
+    useEffect(() => {
+        fetchBlogs();
+    }, []);
+
+
+
+
+    useEffect(() => {
+        fetchSingleBlogs();
+    }, [id]);
+
+
+    const formatDate = (date) => {
+        const options = { month: 'long', day: 'numeric', year: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    };
+
+    const fetchSingleBlogs = async () => {
+        try {
+            const response = await fetch(`https://backend.artechworld.tech/api/blog/${id}`);
+            const data = await response.json();
+            if (data.status) {
+                const parsedBlogs = data.data
+
+              
+                setSingleblogs(parsedBlogs);
+
+
+                const date = new Date(data.data.created_at);
+
+            
+                const formattedDate = formatDate(date);
+
+                setFormattedDate(formattedDate);
+
+
+            } else {
+                console.error('Failed to fetch blogs');
+            }
+        } catch (error) {
+            console.error('Error fetching blogs:', error);
+        }
+    };
     return (
         <>
             <Header />
@@ -26,19 +93,19 @@ const Singleblogpage = () => {
 
 
                             <div className='   bg-white shadow-lg  overflow-hidden rounded p-2  md:p-7 text-[#464646] '>
-                                <h1 className=' text-black text-2xl lg:text-4xl font-[400] mb-4  '> Seller’s Guide</h1>
+                                <h1 className=' text-black text-2xl lg:text-4xl font-[400] mb-4  '> {Singleblogs.title}</h1>
                                 <div className='mb-5 flex flex-col sm:flex-row  gap-5 '>
                                     <p className='flex items-center'>
-                                        <FaCalendarAlt className='w-4 h-4 mr-2' />  Posted by demo on May 27, 2014
+                                        <FaCalendarAlt className='w-4 h-4 mr-2' />  Posted by {Singleblogs.author} on {formattedDate}
                                     </p>
                                     <p className='flex items-center'>
                                         <CiStickyNote className='w-4 h-4 mr-2' />   Buying Properties, Location, Price, Real Estate
                                     </p>
                                 </div>
                                 <img
-                                    class=' object-cover'
-                                    src="https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/2.6.webp" alt=""
-                                />
+                                    class='w-full object-cover'
+                                    src={`https://backend.artechworld.tech/uploads/blogs/tImages/${Singleblogs?.mainImage}`} alt='' />
+
 
 
                                 <div className='my-5'>
@@ -126,10 +193,9 @@ const Singleblogpage = () => {
                                 <h1 className=' text-black text-2xl lg:text-3xl font-[400] mb-4 '>Related Posts</h1>
                                 <div className='flex flex-wrap  gap-8  '>
                                     {
-                                        data.map((item) => {
+                                        blogs.map((item) => {
                                             return (
-
-                                                <BlogCard />
+                                                <BlogCard blog={item} />
 
                                             )
                                         })
@@ -179,7 +245,7 @@ const Singleblogpage = () => {
 
                 </div>
             </div >
-            <Footer/>
+            <Footer />
 
         </>
     )
