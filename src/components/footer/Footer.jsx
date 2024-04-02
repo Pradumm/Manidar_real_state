@@ -5,6 +5,50 @@ import { FaFacebookF } from "react-icons/fa";
 const Footer = () => {
     return (
         <>
+            <footer class="body-font">
+                <div class="container py-16 lg:px-10 mx-auto  ">
+                    <div class="flex flex-wrap md:text-left text-center">
+                        <div class="lg:w-1/3 md:w-1/3 w-full px-4">
+                        <h2 class="text-lg  font-semibold capitalize tracking-normal  mb-3">REXARA REALTY INC.</h2>
+                            <nav class="list-none mb-10">
+                                <li>
+                                    <p>   604-855-8060</p>
+                                    <p>   sarah@sarahtoop.com </p>
+                                    <p>   facebook.com/sarahtooprealtor</p>
+                                </li>
+
+                            </nav>
+                        </div>
+                        <div class="lg:w-1/3 md:w-1/3 w-full px-4">
+                            <nav class="list-none mb-10">
+
+                                <li>
+                                    <img
+
+                                        src="./asset/Rexara Logo Black.png"
+                                        class='' alt="" />
+
+                                </li>
+
+                            </nav>
+                        </div>
+                        <div class="lg:w-1/3 md:w-1/3 w-full px-4 text-center">
+                            <h2 class="text-lg  font-semibold capitalize tracking-normal  mb-3">REXARA REALTY INC.</h2>
+                            <nav class="list-none mb-10">
+                                <li>
+                                    <div className=''>
+                                        <p>#101-7388 Vedder Road </p>
+                                        <p>Chilliwack, BC V2R 4E4</p>
+                                        <p>(604) 705-3339</p>
+                                    </div>
+
+                                </li>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </footer >
 
 
             <footer class="bg-black text-white py-12">
@@ -14,10 +58,10 @@ const Footer = () => {
                             <div class='w-full lg:w-56'>
                                 <img src="https://media.istockphoto.com/id/1445195721/photo/happy-female-customer-paying-with-a-credit-card-in-a-ceramic-store.webp?b=1&s=170667a&w=0&k=20&c=OzfxMe_tc7J0hljLVCMQKbMPIcJ3JVblYow6FonNA_Q=" class='w-full' alt="" />
                                 <p className='text-xl font-semibold text-center py-2 '></p>
-                                <img 
-                                 
-                                 src="./asset/Rexara Logo Transparent.png"
-                                   class='w-40 mx-auto' alt="" />
+                                <img
+
+                                    src="./asset/Rexara Logo Transparent.png"
+                                    class='w-40 mx-auto' alt="" />
 
 
                             </div>
@@ -47,10 +91,6 @@ const Footer = () => {
                             </div>
 
                             <div>
-                                <div className=''>
-                                    <img src="./asset/logo-top.svg" className='w-60' alt="" />
-                                </div>
-
 
                                 <div className='md:text-center'>
                                     <p>John Doe</p>

@@ -41,6 +41,7 @@ const FeaturedPage = () => {
     return (
         <>
             <Header />
+
             <div className='bg-black flex justify-center items-center text-white  w-full bg-cover bg-no-repeat h-56' style={{ backgroundImage: `url("/asset/bg-lines-svg.svg")` }} >
 
                 <form className=" w-full px-4 lg:w-1/2">
@@ -56,6 +57,7 @@ const FeaturedPage = () => {
                 </form>
 
             </div>
+
 
             <div className="container px-4 lg:px-10 py-6 mx-auto">
                 {/* Content for displaying properties */}
