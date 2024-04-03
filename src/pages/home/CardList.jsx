@@ -2,6 +2,7 @@ import React from 'react'
 import { IoBedOutline } from "react-icons/io5";
 import { IoCarSportOutline } from "react-icons/io5";
 import { LuTriangleRight } from "react-icons/lu";
+import { Link } from 'react-router-dom';
 const CardList = () => {
 
     const data = [1, 2, 4, 5, 6, 7]
@@ -31,12 +32,11 @@ const CardList = () => {
 
 
 
-
     return (
         <div className='py-5 lg:py-20 bg-[#abb8c3]/10 '>
             <div className='container px-4 lg:px-10 mx-auto items-center '>
                 <div className='mb-6'>
-                    <h2 className='text-3xl lg:text-5xl font-[400]  text-center text-[#C5B351]    capitalize mb-3'>Exclusive Listings</h2>
+                    <h2 className='text-3xl lg:text-5xl font-[400]  text-center text-[#C5B351]    capitalize mb-3'>FEATURED LISTINGS</h2>
                     <p className=' text-center'>LOREM IPSUM DOLOR SIT AMET</p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-10 mx-auto'>
@@ -85,7 +85,7 @@ const CardList = () => {
                 </div>
 
                 <div className='text-center pt-8'>
-                    <button className='text-white transition duration-150 ease-out hover:ease-in  bg-[#C5B351] hover:bg-black uppercase px-8 py-3'>more</button>
+                    <Link to="/feature" className='text-white transition duration-150 ease-out hover:ease-in  bg-[#C5B351] hover:bg-black uppercase px-8 py-3'>more</Link>
 
                 </div>
 

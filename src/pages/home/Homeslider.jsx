@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
 const Homeslider = () => {
 
     const responsive = {
@@ -40,7 +41,6 @@ const Homeslider = () => {
                 itemClass=""
                 removeArrowOnDeviceType={["tablet", "mobile"]}
             >
-
 
 
                 <div class="bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative" style={{ backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/9.1.webp")` }}>

@@ -38,7 +38,7 @@ const HomeContact = () => {
                                     <p className='text-lg mb-4'> Putting your home on the market takes careful planning, plus the help of a professional. Here’s how to get started. Check out our Seller’s Guide to learn about taking first steps to selling your home. Then, use our home evaluation tool to learn your property’s market value.</p>
                                     <div className='inline-flex flex-col sm:flex-row space-x-0 space-y-2 sm:space-y-0 sm:space-x-3'>
                                         <button className='inline-block  hover:text-white border hover:bg-[#C5B351]  border-[#C5B351] uppercase px-4 py-2 lg:px-12 lg:py-3.5'>Seller's Guide</button>
-                                        <button className=' hover:text-white  bg-[#C5B351] hover:bg-black  uppercase px-4 py-2 lg:px-12 lg:py-3.5 '>Home Evalution</button>
+                                        {/* <button className=' hover:text-white  bg-[#C5B351] hover:bg-black  uppercase px-4 py-2 lg:px-12 lg:py-3.5 '>Home Evalution</button> */}
 
                                     </div>
                                 </div>

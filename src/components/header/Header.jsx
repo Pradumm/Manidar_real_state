@@ -43,7 +43,7 @@ export default function Navbar() {
 
 
   return (
-    <main className=" bg-black h-[100px] font-prata leading-5 lg:leading-[100px] text-white">
+    <main className=" bg-black h-[100px] font-prata leading-5 lg:leading-[100px] text-white ">
       <nav className="container mx-auto h-full flex justify-between lg:px-10 px-2 items-center">
         <div className="flex items-center gap-8 ">
           <section className="flex items-center gap-4">
@@ -117,7 +117,19 @@ export default function Navbar() {
               <Link to="/" className="">Home</Link>
             </li>
 
-            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setPropertiesOpen(true)} onMouseLeave={() => setPropertiesOpen(false)}>
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
+              <Link to="/feature" className=""> PROPERTIE</Link>
+            </li>
+
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
+              <Link to="/buyer-guide" className="">  BUYING </Link>
+            </li>
+            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
+              <Link to="/seller-guide" className="">  SELLING </Link>
+            </li>
+
+
+             {/* <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setPropertiesOpen(true)} onMouseLeave={() => setPropertiesOpen(false)}>
               <div className="relative inline-block text-left">
                 <button
                   className="inline-flex justify-center w-full"
@@ -125,7 +137,7 @@ export default function Navbar() {
                   aria-expanded={propertiesOpen}
                 >
                   PROPERTIES
-                  {/* Heroicon name: chevron-down */}
+               
                   <svg className="-mr-1 mt-10 ml-1 w-5 text-[#C5B351] h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 011.414-1.414L10 10.758l4.879-4.879a1 1 0 111.414 1.414L10 12.586z" clipRule="evenodd" />
                   </svg>
@@ -141,9 +153,10 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-            </li>
+            </li>  */}
 
-            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setBuyingOpen(true)} onMouseLeave={() => setBuyingOpen(false)}>
+            {/* <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setBuyingOpen(true)} onMouseLeave={() => setBuyingOpen(false)}>
+
               <div className="relative inline-block text-left">
                 <button
                   className="inline-flex justify-center w-full"
@@ -151,7 +164,7 @@ export default function Navbar() {
                   aria-expanded={buyingOpen}
                 >
                   BUYING
-                  {/* Heroicon name: chevron-down */}
+              
                   <svg className="-mr-1 mt-10 ml-1 w-5 text-[#C5B351] h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 011.414-1.414L10 10.758l4.879-4.879a1 1 0 111.414 1.414L10 12.586z" clipRule="evenodd" />
                   </svg>
@@ -166,9 +179,9 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-            </li>
+            </li> */}
 
-            <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setSellingOpen(true)} onMouseLeave={() => setSellingOpen(false)}>
+            {/* <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C5B351] " onMouseEnter={() => setSellingOpen(true)} onMouseLeave={() => setSellingOpen(false)}>
               <div className="relative inline-block text-left">
                 <button
                   className="inline-flex justify-center w-full"
@@ -176,7 +189,7 @@ export default function Navbar() {
                   aria-expanded={sellingOpen}
                 >
                   SELLING
-                  {/* Heroicon name: chevron-down */}
+                 
                   <svg className="-mr-1 mt-10 ml-1 w-5 text-[#C5B351] h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 011.414-1.414L10 10.758l4.879-4.879a1 1 0 111.414 1.414L10 12.586z" clipRule="evenodd" />
                   </svg>
@@ -192,7 +205,7 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-            </li>
+            </li>  */}
 
             <li className=" px-2 xl:px-4 hover:bg-[rgba(255,255,255,0.1)] hover:text-[#C8B568]">
               <Link to="/blog" className="">blog</Link>

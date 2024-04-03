@@ -9,6 +9,7 @@ import About from './About'
 import CardList from './CardList'
 import Homeinfo from './Homeinfo'
 import Homeslider from './Homeslider'
+import DemoCarousel from './DemoCarousel'
 
 const Home = () => {
     return (
@@ -47,7 +48,7 @@ const Home = () => {
                     <div class="col-span-1 parent-div  py-28  lg:py-40 bg-cover bg-no-repeat  shadow overflow-hidden relative flex items-center justify-center" style={{ backgroundImage: `url("https://s3-us-west-2.amazonaws.com/avenuehq-listings/fvrebgv/000/262/883/0c8f25cb144d1f1445446c0391bf2caf97a1b653.jpg?fit=clip&w=1140")` }}>
                         <div class="   bg-black bg-opacity-70 hover:bg-opacity-0 z-50  text-center absolute inset-0 flex items-center justify-center ">
                             <div className='flex flex-col'>
-                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">ABBOTSFORD</p>
+                                <p class="text-white text-2xl font-normal font-prata  tracking-tight ">SURREY</p>
                                 <div className='text-white content flex gap-2 mt-3'>
 
                                     <button className='px-4 py-1.5 bg-black hover:bg-NewYello'>House</button>
@@ -171,7 +172,10 @@ const Home = () => {
                 </div>
 
             </section>
-
+ 
+            <div className='mt-16'>
+                <DemoCarousel />
+            </div>
 
             <div className='mt-3 lg:mt-16'>
                 <CardList />
@@ -179,10 +183,10 @@ const Home = () => {
             <div className='mt-3 '>
                 <HomeContact />
             </div>
-
-            <div className='mt-16'>
+           
+            {/* <div className='mt-16'>
                 <Testimonial />
-            </div>
+            </div> */}
             <div className='mt-16'>
                 <Homeinfo />
             </div>

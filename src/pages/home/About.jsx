@@ -3,6 +3,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const About = () => {
     return (
         <>
@@ -69,7 +70,7 @@ const About = () => {
                                             </div>
 
                                             <div>
-                                                <span className='text-xl cursor-pointer font-prata flex items-center justify-center'>Contact <FaLongArrowAltRight className='pl-1 pt-1 w-10' /></span>
+                                                <Link to="/contact-us" className='text-xl cursor-pointer font-prata flex items-center justify-center'>Contact <FaLongArrowAltRight className='pl-1 pt-1 w-10' /></Link>
                                             </div>
 
 
