@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiMenu } from "react-icons/fi";
+import Color_logo from "../../assets/Color_logo.png"
 
 import { RxCross2 } from "react-icons/rx";
 import clsx from "clsx";
@@ -54,7 +55,7 @@ export default function Navbar() {
             />
             {/* logo */}
             <Link to={"/"} className="text-4xl ">
-              <img src="./asset/Color logo.png" alt="" className="w-full h-[100px]" />
+              <img src={Color_logo} alt="" className="w-full h-[100px]" />
             </Link>
           </section>
         </div>
