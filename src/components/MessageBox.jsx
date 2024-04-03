@@ -1,3 +1,5 @@
+import React from "react";
+
 const MessageBox = ({ onClose }) => {
   return (
     <div className="fixed bottom-5 right-0 lg:right-5 z-50">

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Footer from "../../components/footer/Footer";
 import BlogCard from "../../components/BlogCard";
 import { FeaturCard } from "../../components/FeaturCard";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 const FeaturesDetails = () => {
   const data = [1, 2, 3, 4];
 
@@ -26,6 +28,27 @@ const FeaturesDetails = () => {
       items: 1,
     },
   };
+
+  const { id } = useParams();
+  const [property, setProperty] = useState(null);
+  const [propertyImages, setPropertyImages] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPropertyData = async () => {
+      try {
+        const response = await axios.get(
+          `https://backend.artechworld.tech/api/property/${id}`
+        );
+        setPropertyImages(response.data[0].image_urls);
+        setProperty(response.data[0]);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    fetchPropertyData();
+  }, [id]);
+
   return (
     <>
       <Header />
@@ -74,16 +97,13 @@ const FeaturesDetails = () => {
           <div className="flex justify-between items-center">
             <div className="mb-6">
               <h1 className="text-2xl lg:text-4xl font-[400] mb-1  ">
-                #407 - 5380 TYEE LANE{" "}
+                {property?.["listing-item-entry-title"]}
               </h1>
-              <p className="text-xs">GARRISON CROSSING – CHILLIWACK, BC</p>
+              <p className="text-base py-2">{property?.["alt-addr"]}</p>
+              <p className="text-xs">{property?.["alt-subarea"]}</p>
             </div>
 
-            <div>
-              <button className=" text-sm border-[1px] uppercase font-semibold rounded-md border-1 py-2 px-3 border-NewYello">
-                Just Listed
-              </button>
-            </div>
+            <div></div>
           </div>
 
           <Carousel
@@ -93,41 +113,17 @@ const FeaturesDetails = () => {
             infinite={true}
             removeArrowOnDeviceType={["tablet", "mobile"]}
           >
-            <div
-              class="bg-cover bg-no-repeat  shadow overflow-hidden relative"
-              style={{
-                backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/9.1.webp")`,
-              }}
-            >
-              <div class=" py-40 md:py-48"></div>
-            </div>
-
-            <div
-              class="bg-cover  bg-no-repeat  shadow overflow-hidden relative"
-              style={{
-                backgroundImage: `url("https://s3-us-west-2.amazonaws.com/avenuehq-listings/fvrebgv/000/262/885/a236cace3a6775ed0231181878f6b8e53f2c0caf.jpg?fit=clip&w=1140")`,
-              }}
-            >
-              <div class=" py-40 md:py-48"></div>
-            </div>
-
-            <div
-              class="bg-cover    bg-no-repeat shadow overflow-hidden relative"
-              style={{
-                backgroundImage: `url("https://idx-media.s3.ca-central-1.amazonaws.com/residential/PhotoE8177012-22.jpeg")`,
-              }}
-            >
-              <div class=" py-40 md:py-48"></div>
-            </div>
-
-            <div
-              class="bg-cover    bg-no-repeat shadow overflow-hidden relative"
-              style={{
-                backgroundImage: `url("https://s3-us-west-2.amazonaws.com/avenuehq-listings/fvrebgv/000/262/885/409a9c461cd63da437ed08331cba3a2f378a4e27.jpg?fit=clip&w=1140")`,
-              }}
-            >
-              <div class=" py-40 md:py-48"></div>
-            </div>
+            {propertyImages.map((imageUrl, index) => (
+              <div
+                key={index}
+                className="bg-cover bg-no-repeat shadow overflow-hidden relative"
+                style={{
+                  backgroundImage: `url("${imageUrl}")`,
+                }}
+              >
+                <div className="py-40 md:py-48"></div>
+              </div>
+            ))}
           </Carousel>
         </div>
 
@@ -138,36 +134,377 @@ const FeaturesDetails = () => {
                 ABOUT{" "}
               </h6>
               <p className="leading-relaxed mb-4">
-                Enjoy the LUXURY LIFE @ The Boardwalk in famous RIVER’S EDGE!
-                This sub-penthouse 1841 sq ft 2 BDRM + DEN home is PERFECT for
-                those ready to ‘downsize’ without losing the SIZE! An incredible
-                (and RARE) find with a lovely SOUTH EASTERN CORNER LOCATION w/ 2
-                PATIOS w/ stunning views of the mountains & river. Spacious open
-                concept modern kitchen w/ soft close cabinets, quartz counters,
-                upgraded SS appliances incl gas range, that opens to a VAULTED
-                living room w/ floor to ceiling cultured stone f/p. Primary
-                suite w/ 5 piece ensuite, massive walk-in closet, & access to a
-                COVERED VIEW PATIO. Large laundry room, den, & inviting dining
-                area for entertaining. 1 covered parking (secondary available to
-                purchase) w/ storage unit. Trails, shopping, parks, & nature are
-                all at your DOORSTEP!
+                {property?.["description"]}
               </p>
 
               <p className="leading-relaxed">
-                Enjoy the LUXURY LIFE @ The Boardwalk in famous RIVER’S EDGE!
-                This sub-penthouse 1841 sq ft 2 BDRM + DEN home is PERFECT for
-                those ready to ‘downsize’ without losing the SIZE! An incredible
-                (and RARE) find with a lovely SOUTH EASTERN CORNER LOCATION w/ 2
-                PATIOS w/ stunning views of the mountains & river. Spacious open
-                concept modern kitchen w/ soft close cabinets, quartz counters,
-                upgraded SS appliances incl gas range, that opens to a VAULTED
-                living room w/ floor to ceiling cultured stone f/p. Primary
-                suite w/ 5 piece ensuite, massive walk-in closet, & access to a
-                COVERED VIEW PATIO. Large laundry room, den, & inviting dining
-                area for entertaining. 1 covered parking (secondary available to
-                purchase) w/ storage unit. Trails, shopping, parks, & nature are
-                all at your DOORSTEP!
+                {property?.["additional_info"]["Legal Description:"]}
               </p>
+
+              <div className="py-5">
+                <div>
+                  <h6 className="text-2xl  font-[400] mb-6 underline underline-offset-8 ">
+                    Additional Info:
+                  </h6>
+
+                  <div className="border border-gray-200 rounded-lg overflow-hidden">
+                    <table className="min-w-full divide-y divide-gray-200">
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-wrap font-bold">
+                            Property Type:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property?.["summary-property-type"]}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-wrap font-bold">
+                            Dwelling Type:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-4"] &&
+                            property.property_info["info-section-REA-4"][
+                              "Dwelling Type:"
+                            ]
+                              ? property.property_info["info-section-REA-4"][
+                                  "Dwelling Type:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+
+                        <tr className="bg-gray-50">
+                          <td className="px-6 py-2 whitespace-wrap font-bold">
+                            Heating:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Heating:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Heating:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-wrap font-bold">
+                            Construction:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Construction:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Construction:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-gray-50">
+                          <td className="px-6 py-2 whitespace-wrap font-bold">
+                            Foundation:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Foundation:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Foundation:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-wrap font-bold">
+                            Basement:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Basement:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Basement:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Roof:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Roof:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Roof:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Floor Finish:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Floor Finish:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Floor Finish:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Parking:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Parking:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Parking:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Parking Total/Covered:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Parking Total/Covered:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Parking Total/Covered:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Parking Access:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Parking Access:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Parking Access:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Exterior Finish:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Exterior Finish:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Exterior Finish:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Title to Land:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Title to Land:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Title to Land:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Suite:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-5"] &&
+                            property.property_info["info-section-REA-5"][
+                              "Suite:"
+                            ]
+                              ? property.property_info["info-section-REA-5"][
+                                  "Suite:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Property Disclosure:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-7"] &&
+                            property.property_info["info-section-REA-7"][
+                              "Property Disclosure:"
+                            ]
+                              ? property.property_info["info-section-REA-7"][
+                                  "Property Disclosure:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Fixtures Leased:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-7"] &&
+                            property.property_info["info-section-REA-7"][
+                              "Fixtures Leased:"
+                            ]
+                              ? property.property_info["info-section-REA-7"][
+                                  "Fixtures Leased:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Fixtures Removed:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-7"] &&
+                            property.property_info["info-section-REA-7"][
+                              "Fixtures Removed:"
+                            ]
+                              ? property.property_info["info-section-REA-7"][
+                                  "Fixtures Removed:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Cats:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-7"] &&
+                            property.property_info["info-section-REA-7"][
+                              "Cats:"
+                            ]
+                              ? property.property_info["info-section-REA-7"][
+                                  "Cats:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Dogs:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-7"] &&
+                            property.property_info["info-section-REA-7"][
+                              "Dogs:"
+                            ]
+                              ? property.property_info["info-section-REA-7"][
+                                  "Dogs:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Reno / Year:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-7"] &&
+                            property.property_info["info-section-REA-7"][
+                              "Reno / Year:"
+                            ]
+                              ? property.property_info["info-section-REA-7"][
+                                  "Reno / Year:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="px-6 py-2 whitespace-nowrap font-bold">
+                            Services Connected:
+                          </td>
+                          <td className="px-6 py-2 whitespace-wrap">
+                            {property &&
+                            property.property_info &&
+                            property.property_info["info-section-REA-7"] &&
+                            property.property_info["info-section-REA-7"][
+                              "Services Connected:"
+                            ]
+                              ? property.property_info["info-section-REA-7"][
+                                  "Services Connected:"
+                                ]
+                              : "Not available"}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* side section */}
@@ -185,82 +522,108 @@ const FeaturesDetails = () => {
                           List Price:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap text-2xl text-NewYello">
-                          $1,149,900
+                          {property?.["mrp-listing-price-container"]}
                         </td>
                       </tr>
                       <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
                           MLS®:
                         </td>
-                        <td className="px-6 py-2 whitespace-wrap">#R2863509</td>
+                        <td className="px-6 py-2 whitespace-wrap">
+                          {property?.["MLS® Num:"]}
+                        </td>
                       </tr>
                       <tr className="bg-gray-50">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
                           Style:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          Corner Unit, Penthouse
+                          {property &&
+                          property.property_info &&
+                          property.property_info["info-section-REA-4"] &&
+                          property.property_info["info-section-REA-4"][
+                            "Home Style:"
+                          ]
+                            ? property.property_info["info-section-REA-4"][
+                                "Home Style:"
+                              ]
+                            : "Not available"}
                         </td>
                       </tr>
                       <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
                           Bedrooms:
                         </td>
-                        <td className="px-6 py-2 whitespace-wrap">2</td>
+                        <td className="px-6 py-2 whitespace-wrap">
+                          {property?.["Bedrooms:"]}
+                        </td>
                       </tr>
                       <tr className="bg-gray-50">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
                           Bathrooms:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          3 (1 partial)
+                          {property?.["Bathrooms:"]}
                         </td>
                       </tr>
                       <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
                           Year Built:
                         </td>
-                        <td className="px-6 py-2 whitespace-wrap">2019</td>
-                      </tr>
-                      <tr className="bg-gray-50">
-                        <td className="px-6 py-2 whitespace-wrap font-bold">
-                          Age:
+                        <td className="px-6 py-2 whitespace-wrap">
+                          {property &&
+                          property.property_info &&
+                          property.property_info["info-section-REA-4"] &&
+                          property.property_info["info-section-REA-4"][
+                            "Year built:"
+                          ]
+                            ? property.property_info["info-section-REA-4"][
+                                "Year built:"
+                              ]
+                            : "Not available"}
                         </td>
-                        <td className="px-6 py-2 whitespace-wrap">5</td>
                       </tr>
                       <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-nowrap font-bold">
                           Floor Space:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          1,841 sqft
+                          {property?.["Floor Area:"]}
                         </td>
                       </tr>
                       <tr className="bg-gray-50">
                         <td className="px-6 py-2 whitespace-nowrap font-bold">
                           Condo Fees:
                         </td>
-                        <td className="px-6 py-2 whitespace-wrap">$502</td>
+                        <td className="px-6 py-2 whitespace-wrap">
+                          {property &&
+                          property["additional_info"] &&
+                          property["additional_info"]["Maint. Fees:"]
+                            ? property["additional_info"]["Maint. Fees:"]
+                            : "Not available"}
+                        </td>
                       </tr>
                       <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
                           Taxes:
                         </td>
-                        <td className="px-6 py-2 whitespace-wrap">$4,046</td>
-                      </tr>
-                      <tr className="bg-gray-50">
-                        <td className="px-6 py-2 whitespace-wrap font-bold">
-                          Tax Year:
+                        <td className="px-6 py-2 whitespace-wrap">
+                          {property &&
+                          property.property_info &&
+                          property.property_info["info-section-REA-4"] &&
+                          property.property_info["info-section-REA-4"]["Taxes:"]
+                            ? property.property_info["info-section-REA-4"][
+                                "Taxes:"
+                              ]
+                            : "Not available"}
                         </td>
-                        <td className="px-6 py-2 whitespace-wrap">2023</td>
                       </tr>
                       <tr className="bg-white">
                         <td className="px-6 py-2 whitespace-wrap font-bold">
                           Features:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          Central Location, Cul-de-Sac, Recreation Nearby,
-                          Shopping Nearby
+                          {property?.["additional_info"]["Features Included:"]}
                         </td>
                       </tr>
                       <tr className="bg-gray-50">
@@ -268,8 +631,7 @@ const FeaturesDetails = () => {
                           Amenities:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          Air Cond./Central, Elevator, Storage, Wheelchair
-                          Access
+                          {property?.["additional_info"]["Amenities:"]}
                         </td>
                       </tr>
                       <tr className="bg-white">
@@ -277,17 +639,74 @@ const FeaturesDetails = () => {
                           Address:
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
-                          #407, 5380 Tyee Lane, Chilliwack, BC, V2R 6B6
+                          {property?.["alt-addr"]}
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+                <div className="py-6">
+                  <form class=" w-full bg-white shadow-lg text-[#464646] lg:mt-8 p-8">
+                    <div className="flex gap-4 mb-4">
+                      <div>
+                        <img
+                          className="w-28"
+                          src="https://seattle.b-cdn.net/wp-content/uploads/2014/05/agent_profile-500x328.png"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <p>
+                          Maninder Singh <br />
+                          <span className="text-NewYello">
+                            SE DRE# 12567897
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mb-3">
+                      <input
+                        class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
+                        placeholder=" Your Name"
+                        type="text"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
+                        placeholder="Your Email "
+                        type="text"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
+                        placeholder="Your Mobile "
+                        type="text"
+                      />
+                    </div>
+
+                    <div className="mb-3">
+                      <textarea
+                        className=" my-3 border w-full rounded-lg px-4 focus:outline-none border-gray-300 py-2"
+                        placeholder="Im interested in  Gorgeous studio for rent  "
+                        cols="6"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                    <div className="mt-6">
+                      <button className="text-white  shadow-xl text-sm transition duration-150 ease-out hover:ease-in  bg-[#C5B351] hover:bg-black    focus:outline-none block w-full p-2.5 ">
+                        Send Email
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-[60%_auto] xl:grid-cols-[70%_auto] gap-4">
+          {/* <div className="grid grid-cols-1 md:grid-cols-[60%_auto] xl:grid-cols-[70%_auto] gap-4">
             <div className="py-6">
               <h1 className=" text-black text-2xl inline-block lg:text-3xl font-[400] mb-6 ">
                 Similar Listings
@@ -298,63 +717,7 @@ const FeaturesDetails = () => {
                 })}
               </div>
             </div>
-
-            <div className="py-6">
-              <form class=" w-full bg-white shadow-lg text-[#464646] lg:mt-8 p-8">
-                <div className="flex gap-4 mb-4">
-                  <div>
-                    <img
-                      className="w-28"
-                      src="https://seattle.b-cdn.net/wp-content/uploads/2014/05/agent_profile-500x328.png"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <p>
-                      Maninder Singh <br />
-                      <span className="text-NewYello">SE DRE# 12567897</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mb-3">
-                  <input
-                    class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
-                    placeholder=" Your Name"
-                    type="text"
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
-                    placeholder="Your Email "
-                    type="text"
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    class=" border border-gray-300 text-sm rounded-lg  focus:outline-none block w-full p-2.5 placeholder-[#464646] "
-                    placeholder="Your Mobile "
-                    type="text"
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <textarea
-                    className=" my-3 border w-full rounded-lg px-4 focus:outline-none border-gray-300 py-2"
-                    placeholder="Im interested in  Gorgeous studio for rent  "
-                    cols="6"
-                    rows="5"
-                  ></textarea>
-                </div>
-                <div className="mt-6">
-                  <button className="text-white  shadow-xl text-sm transition duration-150 ease-out hover:ease-in  bg-[#C5B351] hover:bg-black    focus:outline-none block w-full p-2.5 ">
-                    Send Email
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
