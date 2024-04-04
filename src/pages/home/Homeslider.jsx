@@ -48,14 +48,13 @@ const Homeslider = () => {
       >
         <Link to="/feature" className="">
           <div
-            class="mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative cursor-pointer"
+            class="  mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative cursor-pointer"
             style={{
               cursor: "pointer",
-              backgroundImage: `url("https://vow-data-media.s3.ca-central-1.amazonaws.com/residential/PhotoX8196620-1.jpeg")`,
-              // backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/9.1.webp")`,
+              backgroundImage: `url("./img/luxury-kitchen-remodel-maria-decotiis-interior-design-img~4e91c30902153c43_4-4253-1-12df3bb.jpg")`,
             }}
           >
-            <div class="bg-black bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">
+            <div class="bg-black  bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">
               <div class="absolute bottom-10 w-full flex justify-center">
                 <div className="text-center">
                   <p class="text-white text-2xl font-normal font-prata tracking-tight mb-2">
@@ -76,8 +75,7 @@ const Homeslider = () => {
             class="  mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative"
             style={{
               cursor: "pointer",
-              backgroundImage: `url("https://vow-data-media.s3.ca-central-1.amazonaws.com/condos/PhotoC8196748-1.jpeg")`,
-              // backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2021/10/6.7-980x444.webp")`,
+              backgroundImage: `url("./img/b_VANCOUVER-Martini-Interiors-453183-rela7f101b3.webp")`,
             }}
           >
             <div class="bg-black bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">
@@ -101,8 +99,7 @@ const Homeslider = () => {
             class=" mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative"
             style={{
               cursor: "pointer",
-              backgroundImage: `url("https://vow-data-media.s3.ca-central-1.amazonaws.com/commercial/PhotoC8184940-1.jpeg")`,
-              // backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/9.4.webp")`,
+              backgroundImage: `url("./img/contemporary-bathroom-design-with-golden-details.jpg")`,
             }}
           >
             <div class="bg-black bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">
@@ -126,8 +123,7 @@ const Homeslider = () => {
             class="mx-[2px] bg-cover bg-no-repeat rounded-[10px] shadow overflow-hidden relative"
             style={{
               cursor: "pointer",
-              backgroundImage: `url("https://vow-data-media.s3.ca-central-1.amazonaws.com/condos/PhotoC8196692-1.jpeg")`,
-              // backgroundImage: `url("https://sanjose-wpresidence.b-cdn.net/wp-content/uploads/2014/05/2.3-3-980x682.webp")`,
+              backgroundImage: `url("./img/ellsworth-primary-bath-vancouver-02_51294893628_o-scaled.jpg")`,
             }}
           >
             <div class="bg-black bg-opacity-25 inset-0 hover:bg-opacity-0 z-50 py-40 md:py-48">

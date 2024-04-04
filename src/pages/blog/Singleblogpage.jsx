@@ -11,7 +11,10 @@ import BlogCard from "../../components/BlogCard"
 import SearchForm from '../../components/SearchForm';
 import Footer from '../../components/footer/Footer';
 import { useParams } from 'react-router-dom';
+import MessageBox from '../../components/MessageBox';
+import { useMyContext } from '../../store/ContextApi';
 const Singleblogpage = () => {
+    const { showMessageBox, handleClose } = useMyContext()
     const data = [1, 2, 3, 4, 5]
     const [blogs, setBlogs] = useState([]);
     const [Singleblogs, setSingleblogs] = useState({});
@@ -60,13 +63,13 @@ const Singleblogpage = () => {
             if (data.status) {
                 const parsedBlogs = data.data
 
-              
+
                 setSingleblogs(parsedBlogs);
 
 
                 const date = new Date(data.data.created_at);
 
-            
+
                 const formattedDate = formatDate(date);
 
                 setFormattedDate(formattedDate);
@@ -245,6 +248,8 @@ const Singleblogpage = () => {
 
                 </div>
             </div >
+
+            {showMessageBox && <MessageBox onClose={handleClose} />}
             <Footer />
 
         </>

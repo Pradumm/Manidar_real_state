@@ -2,18 +2,21 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import MessageBox from "../../components/MessageBox";
+import { useMyContext } from "../../store/ContextApi";
 
 const Testimonialpage = () => {
+
+  const {showMessageBox,handleClose } = useMyContext()
+
   const [testimonials, setTestimonials] = useState([]);
-  const [showMessageBox, setShowMessageBox] = useState(false);
+
+
 
   useEffect(() => {
     fetchTestimonials();
-    const timer = setTimeout(() => {
-      setShowMessageBox(true);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+  }, [])
+
+
 
   const fetchTestimonials = async () => {
     try {
@@ -31,10 +34,6 @@ const Testimonialpage = () => {
     }
   };
 
-  const handleClose = () => {
-    setShowMessageBox(false);
-  };
-
   // Function to render stars based on rating
   const renderStars = (rating) => {
     const stars = [];
@@ -42,9 +41,8 @@ const Testimonialpage = () => {
       stars.push(
         <span
           key={i}
-          className={`mr-1 ${
-            i <= rating ? "text-yellow-400" : "text-gray-400"
-          }`}
+          className={`mr-1 ${i <= rating ? "text-yellow-400" : "text-gray-400"
+            }`}
         >
           &#9733;
         </span>

@@ -7,9 +7,13 @@ import BlogCard from "../../components/BlogCard";
 import { FeaturCard } from "../../components/FeaturCard";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+
+import { useMyContext } from "../../store/ContextApi";
+import MessageBox from "../../components/MessageBox";
 const FeaturesDetails = () => {
   const data = [1, 2, 3, 4];
-
+  
+  const { showMessageBox, handleClose } = useMyContext()
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -164,14 +168,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-4"] &&
-                            property.property_info["info-section-REA-4"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-4"] &&
+                              property.property_info["info-section-REA-4"][
                               "Dwelling Type:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-4"][
-                                  "Dwelling Type:"
-                                ]
+                              "Dwelling Type:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -182,14 +186,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Heating:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Heating:"
-                                ]
+                              "Heating:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -199,14 +203,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Construction:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Construction:"
-                                ]
+                              "Construction:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -216,14 +220,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Foundation:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Foundation:"
-                                ]
+                              "Foundation:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -234,14 +238,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Basement:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Basement:"
-                                ]
+                              "Basement:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -251,14 +255,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Roof:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Roof:"
-                                ]
+                              "Roof:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -268,14 +272,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Floor Finish:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Floor Finish:"
-                                ]
+                              "Floor Finish:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -285,14 +289,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Parking:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Parking:"
-                                ]
+                              "Parking:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -302,14 +306,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Parking Total/Covered:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Parking Total/Covered:"
-                                ]
+                              "Parking Total/Covered:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -319,14 +323,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Parking Access:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Parking Access:"
-                                ]
+                              "Parking Access:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -336,14 +340,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Exterior Finish:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Exterior Finish:"
-                                ]
+                              "Exterior Finish:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -353,14 +357,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Title to Land:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Title to Land:"
-                                ]
+                              "Title to Land:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -370,14 +374,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-5"] &&
-                            property.property_info["info-section-REA-5"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-5"] &&
+                              property.property_info["info-section-REA-5"][
                               "Suite:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-5"][
-                                  "Suite:"
-                                ]
+                              "Suite:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -387,14 +391,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-7"] &&
+                              property.property_info["info-section-REA-7"][
                               "Property Disclosure:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-7"][
-                                  "Property Disclosure:"
-                                ]
+                              "Property Disclosure:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -404,14 +408,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-7"] &&
+                              property.property_info["info-section-REA-7"][
                               "Fixtures Leased:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-7"][
-                                  "Fixtures Leased:"
-                                ]
+                              "Fixtures Leased:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -421,14 +425,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-7"] &&
+                              property.property_info["info-section-REA-7"][
                               "Fixtures Removed:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-7"][
-                                  "Fixtures Removed:"
-                                ]
+                              "Fixtures Removed:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -438,14 +442,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-7"] &&
+                              property.property_info["info-section-REA-7"][
                               "Cats:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-7"][
-                                  "Cats:"
-                                ]
+                              "Cats:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -455,14 +459,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-7"] &&
+                              property.property_info["info-section-REA-7"][
                               "Dogs:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-7"][
-                                  "Dogs:"
-                                ]
+                              "Dogs:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -472,14 +476,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-7"] &&
+                              property.property_info["info-section-REA-7"][
                               "Reno / Year:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-7"][
-                                  "Reno / Year:"
-                                ]
+                              "Reno / Year:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -489,14 +493,14 @@ const FeaturesDetails = () => {
                           </td>
                           <td className="px-6 py-2 whitespace-wrap">
                             {property &&
-                            property.property_info &&
-                            property.property_info["info-section-REA-7"] &&
-                            property.property_info["info-section-REA-7"][
+                              property.property_info &&
+                              property.property_info["info-section-REA-7"] &&
+                              property.property_info["info-section-REA-7"][
                               "Services Connected:"
-                            ]
+                              ]
                               ? property.property_info["info-section-REA-7"][
-                                  "Services Connected:"
-                                ]
+                              "Services Connected:"
+                              ]
                               : "Not available"}
                           </td>
                         </tr>
@@ -539,14 +543,14 @@ const FeaturesDetails = () => {
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
                           {property &&
-                          property.property_info &&
-                          property.property_info["info-section-REA-4"] &&
-                          property.property_info["info-section-REA-4"][
+                            property.property_info &&
+                            property.property_info["info-section-REA-4"] &&
+                            property.property_info["info-section-REA-4"][
                             "Home Style:"
-                          ]
+                            ]
                             ? property.property_info["info-section-REA-4"][
-                                "Home Style:"
-                              ]
+                            "Home Style:"
+                            ]
                             : "Not available"}
                         </td>
                       </tr>
@@ -572,14 +576,14 @@ const FeaturesDetails = () => {
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
                           {property &&
-                          property.property_info &&
-                          property.property_info["info-section-REA-4"] &&
-                          property.property_info["info-section-REA-4"][
+                            property.property_info &&
+                            property.property_info["info-section-REA-4"] &&
+                            property.property_info["info-section-REA-4"][
                             "Year built:"
-                          ]
+                            ]
                             ? property.property_info["info-section-REA-4"][
-                                "Year built:"
-                              ]
+                            "Year built:"
+                            ]
                             : "Not available"}
                         </td>
                       </tr>
@@ -597,8 +601,8 @@ const FeaturesDetails = () => {
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
                           {property &&
-                          property["additional_info"] &&
-                          property["additional_info"]["Maint. Fees:"]
+                            property["additional_info"] &&
+                            property["additional_info"]["Maint. Fees:"]
                             ? property["additional_info"]["Maint. Fees:"]
                             : "Not available"}
                         </td>
@@ -609,12 +613,12 @@ const FeaturesDetails = () => {
                         </td>
                         <td className="px-6 py-2 whitespace-wrap">
                           {property &&
-                          property.property_info &&
-                          property.property_info["info-section-REA-4"] &&
-                          property.property_info["info-section-REA-4"]["Taxes:"]
+                            property.property_info &&
+                            property.property_info["info-section-REA-4"] &&
+                            property.property_info["info-section-REA-4"]["Taxes:"]
                             ? property.property_info["info-section-REA-4"][
-                                "Taxes:"
-                              ]
+                            "Taxes:"
+                            ]
                             : "Not available"}
                         </td>
                       </tr>
@@ -720,6 +724,8 @@ const FeaturesDetails = () => {
           </div> */}
         </div>
       </div>
+
+      {showMessageBox && <MessageBox onClose={handleClose} />}
 
       <Footer />
     </>

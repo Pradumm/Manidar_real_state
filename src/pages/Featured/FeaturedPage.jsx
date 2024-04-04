@@ -5,12 +5,14 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { IoBedOutline } from "react-icons/io5";
 import { MdOutlineBathroom } from "react-icons/md";
-
+import { useMyContext } from "../../store/ContextApi";
+import MessageBox from "../../components/MessageBox";
 const FeaturedPage = () => {
   const [properties, setProperties] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [propertiesPerPage] = useState(9);
-
+  
+  const { showMessageBox, handleClose } = useMyContext()
   useEffect(() => {
     fetch("https://backend.artechworld.tech/api/admin/property/list/all")
       .then((response) => response.json())
@@ -220,7 +222,7 @@ const FeaturedPage = () => {
           </nav>
         </div>
       </div>
-
+      {showMessageBox && <MessageBox onClose={handleClose} />}
       <Footer />
     </>
   );

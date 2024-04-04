@@ -7,7 +7,6 @@ import FeaturedPage from "./pages/Featured/FeaturedPage";
 import Login from "./components/login/Login";
 import Blogcontainer from "./pages/blog/Blogcontainer";
 import Singleblogpage from "./pages/blog/Singleblogpage";
-import About from "./pages/home/About";
 import Aboutpage from "./pages/About/Aboutpage";
 import Contactpage from "./pages/Contact/Contactpage";
 import Testimonialpage from "./pages/About/Testimonialpage";
@@ -16,8 +15,10 @@ import BuyersGuide from "./pages/sell/BuyersGuide";
 import SellerGuide from "./pages/sell/SellerGuide";
 import Register from "./components/login/Register";
 
+
 function App() {
   const location = useLocation();
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,6 +27,7 @@ function App() {
   return (
     <>
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/feature" element={<FeaturedPage />} />
         <Route path="/property/:id" element={<FeaturesDetails />} />
@@ -39,7 +41,10 @@ function App() {
         <Route path="/seller-guide" element={<SellerGuide />} />
         <Route path="/Sign-up" element={<Register />} />
         <Route path="/mortgage-calculator" element={<Register />} />
+
+
       </Routes>
+
     </>
   );
 }

@@ -10,8 +10,13 @@ import { FaFacebookF } from "react-icons/fa";
 import BlogCard from "../../components/BlogCard"
 import SearchForm from '../../components/SearchForm';
 import Footer from '../../components/footer/Footer';
+
+import { useMyContext } from '../../store/ContextApi';
+import MessageBox from '../../components/MessageBox';
+
 const Contactpage = () => {
     const data = [1, 2, 4]
+    const { showMessageBox, handleClose } = useMyContext()
     return (
         <>
             <Header />
@@ -144,8 +149,8 @@ const Contactpage = () => {
 
                 </div>
             </div >
-
-            <Footer/>
+            {showMessageBox && <MessageBox onClose={handleClose} />}
+            <Footer />
 
         </>
     )
