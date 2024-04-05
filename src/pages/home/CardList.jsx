@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import { IoBedOutline, IoCarSportOutline } from "react-icons/io5";
 import { LuTriangleRight } from "react-icons/lu";
