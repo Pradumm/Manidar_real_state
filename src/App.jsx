@@ -39,7 +39,7 @@ function App() {
         <Route path="/testimonial" element={<Testimonialpage />} />
         <Route path="/buyer-guide" element={<BuyersGuide />} />
         <Route path="/seller-guide" element={<SellerGuide />} />
-        <Route path="/Sign-up" element={<Register />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/mortgage-calculator" element={<Register />} />
 
 
