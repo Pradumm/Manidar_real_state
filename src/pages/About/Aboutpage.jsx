@@ -4,6 +4,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import ContentToggle from "../../components/ContentToggle";
 import Footer from "../../components/footer/Footer";
@@ -39,21 +40,22 @@ const Aboutpage = () => {
 
               <div className="">
                 <p className="text-base leading-relaxed mb-4">
-                  A versatile professional who
-                  has made a name for himself in two distinct fields:
-                  real estate and information technology. As a real estate agent,
-                  Maninder has helped numerous clients find their dream homes or
-                  invest in profitable properties. With his deep knowledge of the
-                  local real estate market and his ability to negotiate favorable deals,
-                  he has earned a reputation for being trustworthy, reliable, and results-oriented.
+                  A versatile professional who has made a name for himself in
+                  two distinct fields: real estate and information technology.
+                  As a real estate agent, Maninder has helped numerous clients
+                  find their dream homes or invest in profitable properties.
+                  With his deep knowledge of the local real estate market and
+                  his ability to negotiate favorable deals, he has earned a
+                  reputation for being trustworthy, reliable, and
+                  results-oriented.
                 </p>
 
                 <p className="text-base  leading-relaxed   mb-8">
-                  Maninder's unique combination of skills and experience
-                  makes him a valuable asset to anyone looking to buy, sell,
-                  or invest in real estate, as well as companies seeking to
-                  leverage technology to achieve their business goals.
-                  With his passion for both fields, he is committed to providing his clients with
+                  Maninder's unique combination of skills and experience makes
+                  him a valuable asset to anyone looking to buy, sell, or invest
+                  in real estate, as well as companies seeking to leverage
+                  technology to achieve their business goals. With his passion
+                  for both fields, he is committed to providing his clients with
                   exceptional service and delivering exceptional results.
                 </p>
 
@@ -66,29 +68,46 @@ const Aboutpage = () => {
                           className=" flex items-center justify-center w-10 h-10 rounded-full border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
                              -full"
                         >
-                          <FaLinkedinIn />
+                          <Link
+                            to="https://www.linkedin.com/in/maninder-singh-30674326b/"
+                            target="_blank"
+                          >
+                            <FaLinkedinIn />
+                          </Link>
                         </div>
                         <div
                           className=" flex items-center 
                                justify-center w-10 h-10 rounded-full border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
                               -full"
                         >
-                          <FaInstagram />
+                          <Link
+                            to="https://www.instagram.com/maninder_singh_realestate/"
+                            target="_blank"
+                          >
+                            <FaInstagram />
+                          </Link>
                         </div>
                         <div
                           className=" flex items-center 
                                  justify-center w-10 h-10 rounded-full border border-[#C5B351] hover:bg-[#C5B351]  transition-all duration-75
                                -full"
                         >
-                          <FaFacebookF />
+                          <Link
+                            to="https://www.facebook.com/profile.php?id=100082839065240"
+                            target="_blank"
+                          >
+                            <FaFacebookF />
+                          </Link>
                         </div>
                       </div>
 
                       <div>
-                        <span className="text-xl cursor-pointer font-prata flex items-center justify-center">
-                          Contact{" "}
-                          <FaLongArrowAltRight className="pl-1 pt-1 w-10" />
-                        </span>
+                        <Link to="/contact" className="cursor-pointer">
+                          <span className="text-xl cursor-pointer font-prata flex items-center justify-center ">
+                            Contact{" "}
+                            <FaLongArrowAltRight className="pl-1 pt-1 w-10" />
+                          </span>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -113,14 +132,14 @@ const Aboutpage = () => {
       >
         <div className="flex flex-col text-center w-full mb-5 lg:mb-14">
           <h1 className=" text-2xl lg:text-5xl font-[400] mb-4 text-[#C5B351]  ">
-            About Maninder Realty
+            About Maninder Singh
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            "Maninder Singh is a dedicated and knowledgeable real estate agent with
-            a passion for helping clients find their dream home. With years of experience
-            in the industry,
-            Maninder has established a reputation for providing exceptional
-            service and expert guidance to each and every one of his clients.
+            Maninder Singh is a dedicated and knowledgeable real estate agent
+            with a passion for helping clients find their dream home. With years
+            of experience in the industry, Maninder has established a reputation
+            for providing exceptional service and expert guidance to each and
+            every one of his clients.
           </p>
         </div>
 
@@ -131,9 +150,11 @@ const Aboutpage = () => {
             </h1>
             <div className="">
               <p>
-                Due to our unparalleled results, expertise and dedication, we
-                rank amongst the Top 6 agencies in Seattle and our area. She is
-                also and is an elite member to Corcoran’s Presidents Council.{" "}
+                At our real estate agency, we prioritize excellence, integrity,
+                dedication, and community involvement. Innovation and
+                collaboration drive our commitment to delivering unparalleled
+                results for our clients, making us a top-ranking agency in
+                Seattle and beyond.
               </p>
             </div>
           </div>
@@ -143,21 +164,27 @@ const Aboutpage = () => {
             </h1>
             <div className="">
               <p>
-                Due to our unparalleled results, expertise and dedication, we
-                rank amongst the Top 6 agencies in Seattle and our area. She is
-                also and is an elite member to Corcoran’s Presidents Council.{" "}
+                Our mission is to redefine the real estate experience by
+                prioritizing our clients' needs above all else. Through
+                personalized service, expert guidance, and a dedication to
+                excellence, we aim to exceed expectations at every turn. Whether
+                you're buying, selling, or investing, we're here to empower you
+                with the knowledge and support you need to achieve your real
+                estate goals with confidence.
               </p>
             </div>
           </div>
           <div className="bg-white shadow-lg rounded-lg p-7">
             <h1 className="text-2xl lg:text-4xl font-[400] mb-6 text-[#C5B351] ">
-              Our Values
+              Our Team
             </h1>
             <div className="">
               <p>
-                Due to our unparalleled results, expertise and dedication, we
-                rank amongst the Top 6 agencies in Seattle and our area. She is
-                also and is an elite member to Corcoran’s Presidents Council.{" "}
+                Comprising seasoned professionals dedicated to excellence, our
+                team brings expertise, passion, and a client-centric approach to
+                every real estate endeavor. Collaborative and committed, we work
+                tirelessly to exceed expectations and achieve success for our
+                clients.
               </p>
             </div>
           </div>
@@ -167,9 +194,10 @@ const Aboutpage = () => {
             </h1>
             <div className="">
               <p>
-                Due to our unparalleled results, expertise and dedication, we
-                rank amongst the Top 6 agencies in Seattle and our area. She is
-                also and is an elite member to Corcoran’s Presidents Council.{" "}
+                We harness cutting-edge technology, market insights, and an
+                extensive network to deliver tailored solutions for our clients,
+                ensuring seamless navigation of the real estate journey and
+                optimal outcomes.
               </p>
             </div>
           </div>
@@ -187,10 +215,10 @@ const Aboutpage = () => {
             Frequently Asked Questions
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base px-4">
-            Liza is recognized by everyone – clients, developers, vendors, and
-            industry professionals – for her unique talents, creative drive, and
-            diligence in assisting buyers and sellers in one of the most scenic
-            and fulfilling places, Park City.
+            Maninder Singh is widely respected by clients, developers, vendors,
+            and industry professionals alike for his exceptional skills,
+            innovative approach, and unwavering commitment to assisting buyers
+            and sellers in the vibrant real estate market
           </p>
         </div>
 
