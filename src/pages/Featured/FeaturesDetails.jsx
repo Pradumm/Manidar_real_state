@@ -132,7 +132,7 @@ const FeaturesDetails = () => {
         </div>
 
         <div className="container mx-auto py-6 lg:py-10 px-4 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-[55%_auto] gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-[55%_auto] gap-5">
             <div>
               <h6 className="text-2xl  font-[400] mb-6 underline underline-offset-8 ">
                 ABOUT{" "}
@@ -626,7 +626,7 @@ const FeaturesDetails = () => {
                         <td className="px-6 py-2 whitespace-wrap font-bold">
                           Features:
                         </td>
-                        <td className="px-6 py-2 whitespace-wrap">
+                        <td className="px-6 py-2 ">
                           {property?.["additional_info"]["Features Included:"]}
                         </td>
                       </tr>

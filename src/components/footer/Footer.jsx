@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer class="body-font">
+      <footer class="">
         <div class="container py-12 lg:px-10 mx-auto  ">
           <div class="flex flex-wrap items-center">
             <div class="lg:w-1/3 md:w-1/3 w-full px-4">
@@ -66,7 +66,7 @@ const Footer = () => {
               </h2>
               <nav class="list-none  mb-10">
                 <li>
-                  <p className="flex items-center   gap-2">
+                  <p className="flex items-center mb-1  gap-2">
                     {" "}
                     <span className=" text-NewYello  ">
                       <MdAddIcCall className="w-6 h-6 " />
@@ -80,16 +80,17 @@ const Footer = () => {
                     </span>{" "}
                     info@rexararealty.com{" "}
                   </p>
-                  <a href="https://www.facebook.com/RexaraRealtyInc/">
-                    <p className="flex items-center gap-2">
+                  <Link to="https://www.facebook.com/RexaraRealtyInc/">
+                    <p className="flex  break-all  items-center gap-2 p-2">
                       {" "}
                       <span className=" text-NewYello  ">
                         {" "}
                         <FaFacebookF className=" w-6 h-6 " />{" "}
                       </span>{" "}
                       https://www.facebook.com/RexaraRealtyInc/
+
                     </p>
-                  </a>
+                  </Link>
                 </li>
               </nav>
             </div>
@@ -97,7 +98,7 @@ const Footer = () => {
         </div>
       </footer>
 
-      <footer class="bg-[#152B47] text-white py-2">
+      <footer class="bg-[#152B47] text-white w-full py-2">
         <div class=" container lg:px-10 mx-auto  ">
           <div class="grid grid-cols-1 gap-2 px-4 py-6 lg:py-8 sm:grid-cols-2 md:grid-cols-3 ">
             <div class="w-full lg:col-span-1 lg:-mt-12">
