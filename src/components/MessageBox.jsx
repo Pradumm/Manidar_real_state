@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import Modelform from "./Modelform";
 
 const MessageBox = ({ onClose }) => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-
-
   return (
-
     <>
       <div className="fixed bottom-5 right-0 lg:right-5 z-50">
-        <div className="cursor-pointer w-56 p-5 bg-white shadow-lg opacity-100">
+        <div className=" hidden sm:block cursor-pointer w-56 p-5 bg-white shadow-lg opacity-100">
           <div>
             <div>
               <button
@@ -40,20 +36,29 @@ const MessageBox = ({ onClose }) => {
               </p>
               <button
                 onClick={toggleModal}
-                className="mt-3 rounded bg-black px-4 py-1.5 text-sm text-white">
+                className="mt-3 rounded bg-black px-4 py-1.5 text-sm text-white"
+              >
                 Message Maninder
               </button>
             </div>
           </div>
         </div>
+
+        <div className="flex justify-end mt-4">
+          <img
+            onClick={toggleModal}
+            className="w-16 h-16 object-fill rounded-full "
+            src="https://crm.artechworld.tech/images/faces/facemaninder.png"
+            alt=""
+          />
+        </div>
       </div>
 
-
-
-
-
       {isModalOpen && (
-        <div id="crud-modal" className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div
+          id="crud-modal"
+          className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
           <div className="absolute right-0 p-4 w-full max-w-md max-h-full">
             <div className="relative bg-white rounded-lg shadow">
               <div className="flex items-center justify-between p-4 rounded-t dark:border-gray-600">
@@ -85,10 +90,7 @@ const MessageBox = ({ onClose }) => {
           </div>
         </div>
       )}
-
     </>
-
-
   );
 };
 
